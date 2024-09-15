@@ -1,6 +1,6 @@
 # ChloroplastRedoxReg
 
-# RNA-Seq analysis of Arabidopsis leaves illuminated with visible monochromatic light and combinations of visible wavelengths forming white light favoring either Photosystem II (PSII) or Photosystem I (PSI), where we studied the transcriptional regulation by the redox state of the plastoquinone (PQ) pool. 
+RNA-Seq analysis of Arabidopsis leaves illuminated with visible monochromatic light and combinations of visible wavelengths forming white light favoring either Photosystem II (PSII) or Photosystem I (PSI), where we studied the transcriptional regulation by the redox state of the plastoquinone (PQ) pool. 
 
 This repository contains a collection of scripts for RNA-seq data analysis, including transcript quantification, differential expression, and data visualization. The analysis pipeline makes use of high-performance computing (HPC) clusters and R scripts.
 
