@@ -11,7 +11,7 @@
 
 #STAR --runMode genomeGenerate --genomeDir star_index  \
 #--genomeFastaFiles TAIR10_chr_all.fas \
-#--sjdbGTFfile /projappl/project_2009761/star/atRTD3_TS_21Feb22_transfix.gtf \
+#--sjdbGTFfile /projXXXX/project_XXXXX/star/atRTD3_TS_21Feb22_transfix.gtf \
 #-runThreadN $SLURM_CPUS_PER_TASK --sjdbOverhang 48 --limitGenomeGenerateRAM 
 140000000000
 
