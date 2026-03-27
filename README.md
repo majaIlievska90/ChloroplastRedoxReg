@@ -2,7 +2,7 @@
 
 RNA-Seq analysis of Arabidopsis leaves illuminated with visible monochromatic light and combinations of visible wavelengths forming white light favoring either Photosystem II (PSII) or Photosystem I (PSI), where we studied the transcriptional regulation by the redox state of the plastoquinone (PQ) pool. 
 
-The repository includes both standalone R scripts and a modular Nextflow pipeline for scalable, reproducible computation on HPC systems or local environments using Docker or Singularity.
+The repository includes both standalone **R scripts** and a **modular Nextflow pipeline** for scalable, reproducible computation on HPC systems or local environments using Docker or Singularity.
 
 ## Scripts Overview
 
