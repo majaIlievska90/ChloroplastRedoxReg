@@ -2,7 +2,7 @@
 
 RNA-Seq analysis of Arabidopsis leaves illuminated with visible monochromatic light and combinations of visible wavelengths forming white light favoring either Photosystem II (PSII) or Photosystem I (PSI), where we studied the transcriptional regulation by the redox state of the plastoquinone (PQ) pool. 
 
-This repository contains a collection of scripts for RNA-seq data analysis, including transcript quantification, differential expression, and data visualization. The analysis pipeline makes use of high-performance computing (HPC) clusters and R scripts.
+The repository includes both standalone R scripts and a modular Nextflow pipeline for scalable, reproducible computation on HPC systems or local environments using Docker or Singularity.
 
 ## Scripts Overview
 
@@ -21,3 +21,57 @@ This repository contains a collection of scripts for RNA-seq data analysis, incl
 
 ### 4. `Figures/`
 - **Description**: Contains figures generated from the differential expression and splicing analysis. These include visualizations of significant genes, cluster profiles, and other relevant results.
+
+---------------
+
+# Nextflow RNA‑Seq analysis workflow
+
+A fully modular and reproducible workflow implemented in **Nextflow DSL2**.
+
+## Pipeline modules 
+
+### **1. LOAD_FILTER**
+- Loads `.RData` files  
+- Filters low-expression genes  
+- Outputs `dds1h.rds` and `dds4w.rds`
+
+### **2. DESEQ_PAIRWISE**
+- Performs pairwise DESeq2 contrasts  
+- LFC shrinkage with apeglm  
+- Outputs CSV files of significant genes
+
+### **3. DESEQ_GROUP**
+- Performs group-level comparisons (g1 vs g2)
+- Outputs grouped DE genes
+
+### **4. GO_ENRICHMENT**
+- Performs GO enrichment for up- and downregulated genes  
+- Outputs GO term tables
+
+---
+
+# Running the pipeline
+
+### With Docker
+
+nextflow run main.nf -with-docker deseq2-pipeline
+
+### Without containers (local R installation)
+
+nextflow run main.nf
+
+---
+
+# Docker environment
+
+The provided Dockerfile uses **rocker/tidyverse** and installs:
+
+- DESeq2  
+- apeglm  
+- GSEABase  
+- Category  
+- GOstats
+
+Build locally with:
+
+docker build -t deseq2-pipeline .
